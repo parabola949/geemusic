@@ -1,6 +1,7 @@
 from flask import Response, stream_with_context
 import requests
 from os import environ
+
 from geemusic import app, api
 
 @app.route('/wake-up')

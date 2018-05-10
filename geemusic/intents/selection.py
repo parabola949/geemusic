@@ -34,13 +34,13 @@ def play_artist(artist_name):
     # Get a streaming URL for the top song
     stream_url = api.get_stream_url(first_song_id)
 
-    thumbnail = api.get_thumbnail(artist['artistArtRef'])
+    #thumbnail = api.get_thumbnail(artist['artistArtRef'])
     speech_text = render_template("play_artist_text", artist=artist['name'])
-    return audio(speech_text).play(stream_url) \
-        .standard_card(title=speech_text,
-                       text='',
-                       small_image_url=thumbnail,
-                       large_image_url=thumbnail)
+    return audio(speech_text).play(stream_url) #\
+        #.standard_card(title=speech_text,
+        #               text='',
+        #               small_image_url=thumbnail,
+        #               large_image_url=thumbnail)
 
 
 @ask.intent("GeeMusicPlayAlbumIntent")

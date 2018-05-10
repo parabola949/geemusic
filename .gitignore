@@ -1,3 +1,10 @@
 *.pyc
 .venv
 .env
+/Forward/bin/roslyn
+/Forward/bin
+/Forward/obj
+/.vs/geemusic/v15/Server/sqlite3
+/.vs
+/geemusic/.vs/geemusic/v15
+/packages

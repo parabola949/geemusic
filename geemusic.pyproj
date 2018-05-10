@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{019c1c88-913b-47d3-8073-e0bcc6655243}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>server.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <EnableNativeCodeDebugging>False</EnableNativeCodeDebugging>
+    <Environment># Google credentials
+GOOGLE_EMAIL=
+GOOGLE_PASSWORD=
+
+# Publicly accessible URL to your server, WITHOUT trailing slash
+APP_URL=
+
+# Debug mode: Set to True or False
+DEBUG_MODE=True</Environment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include=".env">
+      <SubType>Code</SubType>
+    </Content>
+    <Content Include="LICENSE.txt" />
+    <Content Include="requirements.txt" />
+    <Content Include="runtime.txt" />
+    <Content Include="speech_assets\non_us\sampleUtterances.de.txt" />
+    <Content Include="speech_assets\non_us\sampleUtterances.ja.txt" />
+    <Content Include="speech_assets\non_us\sampleUtterances.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="geemusic\controllers.py" />
+    <Compile Include="geemusic\intents\playback.py" />
+    <Compile Include="geemusic\intents\selection.py" />
+    <Compile Include="geemusic\intents\__init__.py" />
+    <Compile Include="geemusic\utils\last_fm.py" />
+    <Compile Include="geemusic\utils\music.py" />
+    <Compile Include="geemusic\utils\music_queue.py" />
+    <Compile Include="geemusic\utils\__init__.py" />
+    <Compile Include="geemusic\__init__.py" />
+    <Compile Include="server.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="geemusic" />
+    <Folder Include="geemusic\intents" />
+    <Folder Include="geemusic\utils" />
+    <Folder Include="speech_assets\" />
+    <Folder Include="speech_assets\non_us" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+</Project>
